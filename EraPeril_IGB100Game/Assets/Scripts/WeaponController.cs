@@ -21,7 +21,7 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player = true)
+        if (Player == true)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -40,8 +40,8 @@ public class WeaponController : MonoBehaviour
         CanAttack = false;
         Animator anim = Weapon.GetComponent<Animator>();
         anim.SetTrigger("Attack");
-        AudioSource ac = GetComponent<AudioSource>();
-        ac.PlayOneShot(SwordAttackSound);
+        AudioSource audioC = GetComponent<AudioSource>();
+        audioC.PlayOneShot(SwordAttackSound, 0.3f);
         StartCoroutine(ResetAttackCooldown());
     }
 
@@ -54,7 +54,7 @@ public class WeaponController : MonoBehaviour
 
     IEnumerator ResetAttackBool()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(AttackCoolDown);
         isAttacking = false;
     }
 }
