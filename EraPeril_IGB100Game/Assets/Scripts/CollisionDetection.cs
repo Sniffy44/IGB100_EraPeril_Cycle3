@@ -8,13 +8,13 @@ public class CollisionDetection : MonoBehaviour
 {
     public WeaponController wc;
     public GameObject HitParticle;
-    public int damageAmount = 10;
+    public int damageAmount;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        damageAmount = wc.weaponData.damage;
     }
 
     // Update is called once per frame

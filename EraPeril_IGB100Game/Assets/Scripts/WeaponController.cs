@@ -4,57 +4,76 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+    
+    [SerializeField] public WeaponData weaponData;
 
-    public GameObject Weapon;
-    public bool CanAttack = true;
-    public float AttackCoolDown = 1.0f;
-    public AudioClip SwordAttackSound;
+    //[HideInInspector]
+    public GameObject weapon;
+
+    public bool player = true;
+
+    [HideInInspector] 
+    public float attackCoolDown;// = weaponData.swingTime;
+    [HideInInspector] 
+    public AudioClip attackSound;// = weaponData.attackAudioClip;
+    [HideInInspector] 
     public bool isAttacking = false;
-    public bool Player;
+    [HideInInspector] 
+    public bool canAttack = true;
+
+    
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        attackCoolDown = weaponData.swingTime;
+        attackSound = weaponData.attackAudioClip;
+        //weapon = weaponData.weaponModelObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Player == true)
+        if (player == true)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (CanAttack)
+                if (canAttack)
                 {
-                    SwordAttack();
+                    Attack();
                 }
             }
         }
         
     }
 
-    public void SwordAttack()
+    public void Attack()
     {
+        Debug.Log("im swingin boi");
         isAttacking = true;
-        CanAttack = false;
-        Animator anim = Weapon.GetComponent<Animator>();
+        canAttack = false;
+
+        Animator anim = weapon.GetComponent<Animator>();
+        //weapon.SetActive(true);
         anim.SetTrigger("Attack");
+        
         AudioSource audioC = GetComponent<AudioSource>();
-        audioC.PlayOneShot(SwordAttackSound, 0.3f);
+        audioC.PlayOneShot(attackSound, 0.3f);
+
         StartCoroutine(ResetAttackCooldown());
     }
 
     IEnumerator ResetAttackCooldown()
     {
         StartCoroutine(ResetAttackBool());
-        yield return new WaitForSeconds(AttackCoolDown);
-        CanAttack = true;
+        yield return new WaitForSeconds(attackCoolDown);
+        canAttack = true;
     }
 
     IEnumerator ResetAttackBool()
     {
-        yield return new WaitForSeconds(AttackCoolDown);
+        yield return new WaitForSeconds(attackCoolDown);
         isAttacking = false;
     }
 }

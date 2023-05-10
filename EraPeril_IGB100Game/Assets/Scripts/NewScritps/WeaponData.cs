@@ -7,12 +7,15 @@ using UnityEngine;
 public class WeaponData : ScriptableObject{
     
     public new string name;
+    public GameObject weaponModelObject;
     public int damage;
     public int swingTime;
     public bool isThrowable;
+    public AudioClip attackAudioClip;
 
     [HideInInspector]
     public bool isAttacking;
+    public bool canBeSwung = true;
 
 
 

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc9810c7f4759d740bd167d1f11e6e88, type: 3}
-  m_Name: WarAxe
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  name: War Axe
-  weaponModelObject: {fileID: 528277805941526884, guid: 4af0d691177fdf3418760361ca00c152, type: 3}
-  damage: 35
-  swingTime: 2
+  name: Sword
+  weaponModelObject: {fileID: 5824416922789988002, guid: 0da4abd68623a374aaebca71cb81e561, type: 3}
+  damage: 10
+  swingTime: 1
   isThrowable: 0
-  attackAudioClip: {fileID: 8300000, guid: f148219a1bcb51043b8c405a4131c0a3, type: 3}
-  isAttacking: 1
+  attackAudioClip: {fileID: 8300000, guid: e5c79af1089b1ac49b1bb67d89731164, type: 3}
+  isAttacking: 0
   canBeSwung: 1
