@@ -50,7 +50,7 @@ public class WeaponController : MonoBehaviour
 
     public void Attack()
     {
-        Debug.Log("im swingin boi");
+        //Debug.Log("im swingin boi");
         isAttacking = true;
         canAttack = false;
 

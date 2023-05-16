@@ -124,11 +124,15 @@ public class PlayerController : MonoBehaviour
         isGrounded = false;
     }
 
-    void OnCollisionEnter(Collision collision){
+    void OnCollisionEnter(Collision collision){ // COLLISIONS!!!!!!!!!!!
         //Debug.Log(collision.gameObject.name);
 
         if(collision.gameObject.name == "Portal"){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        if(collision.gameObject.name == "Medkit"){
+            
         }
     }
     
