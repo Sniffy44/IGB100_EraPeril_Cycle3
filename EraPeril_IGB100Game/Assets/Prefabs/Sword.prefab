@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 8845370516570544038}
   - component: {fileID: 87981708083459996}
   - component: {fileID: 5657548646105401954}
+  - component: {fileID: -7882080975983556215}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -363,3 +364,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-7882080975983556215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824416922789988002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c15c9ac595546419089ac32e9dc386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 8a9077f3af4fb40488f563cfa59d838b, type: 2}
+  weapon: {fileID: 5824416922789988002}
+  player: 1
+  attackCoolDown: 0
+  attackSound: {fileID: 0}
+  isAttacking: 0
+  canAttack: 1

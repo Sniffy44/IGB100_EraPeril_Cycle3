@@ -58,7 +58,7 @@ public class WeaponController : MonoBehaviour
         //weapon.SetActive(true);
         anim.SetTrigger("Attack");
         
-        AudioSource audioC = GetComponent<AudioSource>();
+        AudioSource audioC = GetComponentInParent<AudioSource>();
         audioC.PlayOneShot(attackSound, 0.3f);
 
         StartCoroutine(ResetAttackCooldown());

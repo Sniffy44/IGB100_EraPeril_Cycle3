@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -123,6 +124,13 @@ public class PlayerController : MonoBehaviour
         isGrounded = false;
     }
 
+    void OnCollisionEnter(Collision collision){
+        //Debug.Log(collision.gameObject.name);
+
+        if(collision.gameObject.name == "Portal"){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
     
 
 }
