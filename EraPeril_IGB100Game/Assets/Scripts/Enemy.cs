@@ -34,12 +34,16 @@ public class Enemy : MonoBehaviour
     {
         enemy.SetDestination(Player.position);
 
+        if(health <= 0){
+            Die();
+        }
+
         
     }
 
-    public void Hit()
+    public void Hit(int damage)
     {
-        health -= 1;
+        health -= damage;
     }
 
     public void Die()

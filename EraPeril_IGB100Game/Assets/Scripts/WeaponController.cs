@@ -12,14 +12,12 @@ public class WeaponController : MonoBehaviour
 
     public bool player = true;
 
-    [HideInInspector] 
-    public float attackCoolDown;// = weaponData.swingTime;
-    [HideInInspector] 
-    public AudioClip attackSound;// = weaponData.attackAudioClip;
-    [HideInInspector] 
-    public bool isAttacking = false;
-    [HideInInspector] 
-    public bool canAttack = true;
+    [HideInInspector] public float attackCoolDown;// = weaponData.swingTime;
+    [HideInInspector] public AudioClip attackSound;// = weaponData.attackAudioClip;
+    [HideInInspector] public float swingAudioVolume;
+    [HideInInspector] public bool isAttacking = false;
+    [HideInInspector] public bool canAttack = true;
+    
 
     
     
@@ -29,6 +27,7 @@ public class WeaponController : MonoBehaviour
     {
         attackCoolDown = weaponData.swingTime;
         attackSound = weaponData.attackAudioClip;
+        swingAudioVolume = weaponData.audioVolume;
         //weapon = weaponData.weaponModelObject;
     }
 
@@ -59,7 +58,7 @@ public class WeaponController : MonoBehaviour
         anim.SetTrigger("Attack");
         
         AudioSource audioC = GetComponentInParent<AudioSource>();
-        audioC.PlayOneShot(attackSound, 0.3f);
+        audioC.PlayOneShot(attackSound, swingAudioVolume);
 
         StartCoroutine(ResetAttackCooldown());
     }

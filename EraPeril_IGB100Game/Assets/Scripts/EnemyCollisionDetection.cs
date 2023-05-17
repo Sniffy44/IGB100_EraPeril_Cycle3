@@ -29,14 +29,9 @@ public class EnemyCollisionDetection : MonoBehaviour
             //other.GetComponent<Animator>().SetTrigger("Hit");
             Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
             var enemy = other.GetComponent<Collider>().GetComponent<Enemy>();
-            if (enemy.health > 1)
-            {
-                enemy.Hit();
-            }
-            else
-            {
-                enemy.Die();
-            }
+            
+            enemy.Hit(damageAmount);
+            
         }
         else if (other.tag == "Player" && wc.isAttacking)
         {

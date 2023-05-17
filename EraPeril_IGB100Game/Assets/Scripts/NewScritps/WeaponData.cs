@@ -12,6 +12,7 @@ public class WeaponData : ScriptableObject{
     public float swingTime;
     public bool isThrowable;
     public AudioClip attackAudioClip;
+    public float audioVolume;
 
     [HideInInspector]
     public bool isAttacking;
