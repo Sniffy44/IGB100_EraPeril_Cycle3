@@ -7117,6 +7117,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5394289083012096534, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.902565
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394289083012096534, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8546037960753939890, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: m_Name
       value: E_Neanderthal

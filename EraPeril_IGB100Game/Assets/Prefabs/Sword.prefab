@@ -381,5 +381,6 @@ MonoBehaviour:
   player: 1
   attackCoolDown: 0
   attackSound: {fileID: 0}
+  swingAudioVolume: 0
   isAttacking: 0
   canAttack: 1
