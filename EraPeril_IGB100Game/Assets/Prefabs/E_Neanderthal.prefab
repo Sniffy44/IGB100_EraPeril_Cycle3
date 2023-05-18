@@ -7169,6 +7169,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8546037960753939897, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8546037961443567563, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: SwordAttackSound
       value: 
