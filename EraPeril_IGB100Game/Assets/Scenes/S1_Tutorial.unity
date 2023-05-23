@@ -16238,9 +16238,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5520276749578144846, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520276749578144846, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5940450222447894721, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178474864884241457, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
@@ -16395,6 +16407,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5839222725064417186, guid: dff55bfc5cb2a3a4487a09b583accbd8, type: 3}
       propertyPath: m_Name
+      value: Medkit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839222725064417186, guid: dff55bfc5cb2a3a4487a09b583accbd8, type: 3}
+      propertyPath: m_TagString
       value: Medkit
       objectReference: {fileID: 0}
     - target: {fileID: 5839222725064417187, guid: dff55bfc5cb2a3a4487a09b583accbd8, type: 3}

@@ -1766,8 +1766,12 @@ MonoBehaviour:
   health: 5
   damage: 4
   enemy: {fileID: 8720702983945855242}
-  Player: {fileID: 222568797134060078, guid: 4ad1629749324494db36f426de15f216, type: 3}
   howclose: 0
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  hasDied: 0
+  rb: {fileID: 8720702983945855236}
+  medkit: {fileID: 5839222725064417186, guid: dff55bfc5cb2a3a4487a09b583accbd8, type: 3}
 --- !u!195 &8720702983945855242
 NavMeshAgent:
   m_ObjectHideFlags: 0

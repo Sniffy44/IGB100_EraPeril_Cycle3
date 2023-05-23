@@ -39,7 +39,19 @@ public class CollisionDetection : MonoBehaviour
 
             AudioSource audioC = GetComponentInParent<AudioSource>();
             audioC.PlayOneShot(hitSound, 0f);
+
+            Vector3 dir = new Vector3(0,10,0);
+
+            //enemy.GetComponent<Rigidbody>().AddForce(enemy.GetComponent<Rigidbody>().velocity * -1, ForceMode.VelocityChange);
+            //StartCoroutine(Bounce());
+
+            other.GetComponent<Rigidbody>().AddForce(dir, ForceMode.VelocityChange);
             
+        }
+
+        if(other.tag == "Medkit" && WeaponController.isAttacking){
+            Vector3 dir = new Vector3(0,10,0);
+            other.GetComponent<Rigidbody>().AddForce(dir, ForceMode.VelocityChange);
         }
         // else if(other.tag == "Player")
         // {

@@ -7177,6 +7177,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8546037960753939895, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546037960753939895, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8546037960753939896, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: health
       value: 50
@@ -7193,6 +7201,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8546037961443567563, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 4499835538098851855}
     - target: {fileID: 8546037961443567563, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: SwordAttackSound
       value: 
@@ -7214,5 +7226,10 @@ PrefabInstance:
 --- !u!4 &4499835538098851851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8546037960753939894, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
+  m_PrefabInstance: {fileID: 5254294127846200765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4499835538098851855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8546037960753939890, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
   m_PrefabInstance: {fileID: 5254294127846200765}
   m_PrefabAsset: {fileID: 0}

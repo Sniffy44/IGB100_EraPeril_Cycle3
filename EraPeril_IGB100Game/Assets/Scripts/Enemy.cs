@@ -16,34 +16,42 @@ public class Enemy : MonoBehaviour
     private PlayerController playerHealth;
 
     public NavMeshAgent enemy;
-    public Transform Player;
+    private Transform player;
 
     public float howclose;
 
     public AudioClip hitSound;
     public AudioClip deathSound;
 
-    private bool hasDied = false;
+    public bool hasDied = false;
+
+    public Rigidbody rb;
+    public GameObject medkit;
+
+    private int killCount;
+    public static int enemiesLeft;
 
 
     // Start is called before the first frame update
     void Start()
     {
         enemy = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        enemiesLeft = Spawners.level1enemySpawnMax;
     }
 
     // Update is called once per frame
     void Update()
     {
-        enemy.SetDestination(Player.position);
+        if(!hasDied) enemy.SetDestination(player.position);
 
         if(health <= 0 && !hasDied){
             hasDied = true;
-            DieSound();
-            Invoke("Die", 0.5f);
+            Die(); 
+            Invoke("Destroy", 5f);
         }
-
-        
+ 
     }
 
     public void Hit(int damage)
@@ -53,8 +61,18 @@ public class Enemy : MonoBehaviour
         audioC.PlayOneShot(hitSound, 1f);
     }
 
-    public void Die()
-    {
+    public void Die(){
+        rb.velocity = new Vector3(0,0,0);
+        AudioSource audioC = GetComponentInParent<AudioSource>();
+        audioC.PlayOneShot(deathSound, .7f);
+
+        killCount ++;
+        enemiesLeft--;
+
+        if(enemiesLeft == 0) SpawnMedkit(rb.position);
+    }
+
+    public void Destroy(){
         //Instantiate(BloodPrefab, transform.position, Quaternion.identity);
         
         Destroy(gameObject);
@@ -62,10 +80,12 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void DieSound(){
-        AudioSource audioC = GetComponentInParent<AudioSource>();
-        audioC.PlayOneShot(deathSound, .7f);
+    public void SpawnMedkit(Vector3 pos){
+        Debug.Log("medkit tryin spawn");
+        Instantiate(medkit, pos + new Vector3(0,3,0), Quaternion.identity);
     }
+
+    
 
     
 }

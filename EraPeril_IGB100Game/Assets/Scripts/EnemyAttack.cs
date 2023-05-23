@@ -16,6 +16,7 @@ public class EnemyAttack : MonoBehaviour
     private float dist;
     private Transform player;
     public float howclose;
+    //public GameObject parent;
 
     // Start is called before the first frame update
     void Start()
@@ -26,17 +27,19 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dist = Vector3.Distance(player.position, transform.position);
+        if(GetComponentInParent<Enemy>().hasDied == false){
+            dist = Vector3.Distance(player.position, transform.position);
 
-        if(dist <= howclose)
-        {
-            transform.LookAt(player);
-        }
-        if (dist <= 2f)
-        {
-            if (CanAttack)
+            if(dist <= howclose)
             {
-                SwordAttack();
+                transform.LookAt(player);
+            }
+            if (dist <= 2f)
+            {
+                if (CanAttack)
+                {
+                    SwordAttack();
+                }
             }
         }
         
