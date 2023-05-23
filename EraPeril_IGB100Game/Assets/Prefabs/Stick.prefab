@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: -8693716021804609999}
   - component: {fileID: 3261189113019006342}
   - component: {fileID: 9215573062992832717}
+  - component: {fileID: 7467695448605982240}
   m_Layer: 0
   m_Name: Stick
   m_TagString: Untagged
@@ -147,9 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffdf527086cdef4482be91a28e5e524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wc: {fileID: 0}
-  HitParticle: {fileID: 0}
-  damageAmount: 5
+  HitParticle: {fileID: 1346074891634586851, guid: b5b483fdc37ce0c42a65b3621df9aba1, type: 3}
+  hitSound: {fileID: 8300000, guid: 614d360f7ffc346468369a4778f4bf3d, type: 3}
 --- !u!95 &3261189113019006342
 Animator:
   serializedVersion: 5
@@ -187,9 +187,22 @@ MonoBehaviour:
   weapon: {fileID: 934921692416241729}
   player: 1
   attackCoolDown: 0
+  attackingTime: 0
   attackSound: {fileID: 0}
-  isAttacking: 0
-  canAttack: 1
+  swingAudioVolume: 0
+--- !u!65 &7467695448605982240
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934921692416241729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5604054, y: 2.096344, z: 0.8249502}
+  m_Center: {x: 0.17788503, y: 0.548172, z: -0.0072579384}
 --- !u!1 &934921692543899208
 GameObject:
   m_ObjectHideFlags: 0

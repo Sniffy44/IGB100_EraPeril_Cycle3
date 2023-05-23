@@ -6,15 +6,16 @@ using UnityEngine;
 
 public class CollisionDetection : MonoBehaviour
 {
-    public WeaponController wc;
+    //public WeaponController wc;
     public GameObject HitParticle;
-    public int damageAmount;
+    public AudioClip hitSound;
+    private int damageAmount;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        damageAmount = wc.weaponData.damage;
+        damageAmount = GetComponent<WeaponController>().weaponData.damage;
     }
 
     // Update is called once per frame
@@ -25,22 +26,27 @@ public class CollisionDetection : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy" && wc.isAttacking)
+        if(other.tag == "Enemy" && WeaponController.isAttacking)
         {
-            UnityEngine.Debug.Log(other.name);
+            //UnityEngine.Debug.Log(other.name);
             //other.GetComponent<Animator>().SetTrigger("Hit");
-            Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
+            if(HitParticle != null) Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
             var enemy = other.GetComponent<Collider>().GetComponent<Enemy>();
             
-            enemy.Hit(damageAmount);
+            enemy.Hit(damageAmount);                                                                                                                   
+
+            UnityEngine.Debug.Log(damageAmount);
+
+            AudioSource audioC = GetComponentInParent<AudioSource>();
+            audioC.PlayOneShot(hitSound, 0f);
             
         }
-        else if(other.tag == "Player" && wc.isAttacking)
-        {
-            Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
-            other.gameObject.TryGetComponent(out PlayerHealth health);
-            health.DecreaseHealth(damageAmount);
-        }
+        // else if(other.tag == "Player")
+        // {
+        //     if(HitParticle != null) Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
+        //     other.gameObject.TryGetComponent(out PlayerHealth health);
+        //     health.DecreaseHealth(damageAmount);
+        // }
 
     }
 }

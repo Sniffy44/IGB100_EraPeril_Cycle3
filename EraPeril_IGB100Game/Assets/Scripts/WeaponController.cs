@@ -13,10 +13,11 @@ public class WeaponController : MonoBehaviour
     public bool player = true;
 
     [HideInInspector] public float attackCoolDown;// = weaponData.swingTime;
+    [HideInInspector] public float attackingTime;
     [HideInInspector] public AudioClip attackSound;// = weaponData.attackAudioClip;
     [HideInInspector] public float swingAudioVolume;
-    [HideInInspector] public bool isAttacking = false;
-    [HideInInspector] public bool canAttack = true;
+    [HideInInspector] public static bool isAttacking = false;
+    [HideInInspector] public static bool canAttack = true;
     
 
     
@@ -28,6 +29,7 @@ public class WeaponController : MonoBehaviour
         attackCoolDown = weaponData.swingTime;
         attackSound = weaponData.attackAudioClip;
         swingAudioVolume = weaponData.audioVolume;
+        attackingTime = weaponData.attackingTime;
         //weapon = weaponData.weaponModelObject;
     }
 
@@ -44,6 +46,8 @@ public class WeaponController : MonoBehaviour
                 }
             }
         }
+
+        //Debug.Log(isAttacking);
         
     }
 
@@ -72,7 +76,7 @@ public class WeaponController : MonoBehaviour
 
     IEnumerator ResetAttackBool()
     {
-        yield return new WaitForSeconds(attackCoolDown);
+        yield return new WaitForSeconds(attackingTime);
         isAttacking = false;
     }
 }

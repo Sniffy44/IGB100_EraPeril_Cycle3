@@ -16,8 +16,9 @@ MonoBehaviour:
   weaponModelObject: {fileID: 5824416922789988002, guid: 0da4abd68623a374aaebca71cb81e561, type: 3}
   damage: 10
   swingTime: 1
+  attackingTime: 0.5
   isThrowable: 0
-  attackAudioClip: {fileID: 8300000, guid: e5c79af1089b1ac49b1bb67d89731164, type: 3}
-  audioVolume: 0.25
+  attackAudioClip: {fileID: 8300000, guid: 0e1e1ef7dcf1b7446bbf04ceb35d021b, type: 3}
+  audioVolume: 2
   isAttacking: 0
   canBeSwung: 1

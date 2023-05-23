@@ -34,7 +34,7 @@ private void Update(){
     int previousSelectedWeapon = selectedWeapon;
 
     for(int i = 0; i < keys.Length; i++){
-        if (Input.GetKeyDown(keys[i])){
+        if (Input.GetKeyDown(keys[i]) && WeaponController.canAttack){
             selectedWeapon = i;
         }
     }

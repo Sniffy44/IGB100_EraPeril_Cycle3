@@ -10,6 +10,8 @@ public class WeaponData : ScriptableObject{
     public GameObject weaponModelObject;
     public int damage;
     public float swingTime;
+    public float attackingTime;
+
     public bool isThrowable;
     public AudioClip attackAudioClip;
     public float audioVolume;

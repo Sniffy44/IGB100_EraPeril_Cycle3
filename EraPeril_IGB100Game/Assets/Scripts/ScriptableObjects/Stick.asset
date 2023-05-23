@@ -15,7 +15,8 @@ MonoBehaviour:
   name: Stick
   weaponModelObject: {fileID: 934921692416241729, guid: 1901ecc21710d3c4c84c4352c291b0a0, type: 3}
   damage: 5
-  swingTime: 0.2
+  swingTime: 0.5
+  attackingTime: 0.25
   isThrowable: 0
   attackAudioClip: {fileID: 8300000, guid: 1a4879bbf51df6946aedaae57639a19e, type: 3}
   audioVolume: 1

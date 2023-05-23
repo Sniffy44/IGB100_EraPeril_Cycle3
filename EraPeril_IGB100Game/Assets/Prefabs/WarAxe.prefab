@@ -48,9 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffdf527086cdef4482be91a28e5e524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wc: {fileID: 0}
-  HitParticle: {fileID: 0}
-  damageAmount: 25
+  HitParticle: {fileID: 1346074891634586851, guid: b5b483fdc37ce0c42a65b3621df9aba1, type: 3}
+  hitSound: {fileID: 8300000, guid: 614d360f7ffc346468369a4778f4bf3d, type: 3}
 --- !u!95 &4062515547372542190
 Animator:
   serializedVersion: 5
@@ -88,9 +87,9 @@ MonoBehaviour:
   weapon: {fileID: 528277805941526884}
   player: 1
   attackCoolDown: 0
+  attackingTime: 0
   attackSound: {fileID: 0}
-  isAttacking: 0
-  canAttack: 1
+  swingAudioVolume: 0
 --- !u!1 &2657476345199923238
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2657476345199923238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.652}
+  m_LocalPosition: {x: 0, y: 0, z: 0.043}
   m_LocalScale: {x: 0.06440506, y: 1.5468541, z: 0.07862}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -215,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8967462901061740170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.525, z: 0.857}
+  m_LocalPosition: {x: -0, y: 0.525, z: 0.248}
   m_LocalScale: {x: 0.013908, y: 0.42368034, z: 0.39692}
   m_ConstrainProportionsScale: 0
   m_Children: []

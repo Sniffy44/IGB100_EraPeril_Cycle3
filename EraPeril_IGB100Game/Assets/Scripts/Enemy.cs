@@ -20,7 +20,10 @@ public class Enemy : MonoBehaviour
 
     public float howclose;
 
-    
+    public AudioClip hitSound;
+    public AudioClip deathSound;
+
+    private bool hasDied = false;
 
 
     // Start is called before the first frame update
@@ -34,8 +37,10 @@ public class Enemy : MonoBehaviour
     {
         enemy.SetDestination(Player.position);
 
-        if(health <= 0){
-            Die();
+        if(health <= 0 && !hasDied){
+            hasDied = true;
+            DieSound();
+            Invoke("Die", 0.5f);
         }
 
         
@@ -44,14 +49,22 @@ public class Enemy : MonoBehaviour
     public void Hit(int damage)
     {
         health -= damage;
+        AudioSource audioC = GetComponentInParent<AudioSource>();
+        audioC.PlayOneShot(hitSound, 1f);
     }
 
     public void Die()
     {
         //Instantiate(BloodPrefab, transform.position, Quaternion.identity);
+        
         Destroy(gameObject);
         //ScoreScript.scoreValue += 10;
 
+    }
+
+    public void DieSound(){
+        AudioSource audioC = GetComponentInParent<AudioSource>();
+        audioC.PlayOneShot(deathSound, .7f);
     }
 
     
