@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     public static int enemiesLeft;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,10 +54,13 @@ public class Enemy : MonoBehaviour
         if(health <= 0 && !hasDied){
             hasDied = true;
             Die(); 
-            Invoke("Destroy", 5f);
+            Invoke("Destroy", 1f);
         }
 
-        Debug.Log(portal.transform.position);
+       
+
+        //Debug.Log(portal.transform.position);
+        //Debug.Log(enemiesLeft);
  
     }
 
@@ -73,8 +77,10 @@ public class Enemy : MonoBehaviour
         audioC.PlayOneShot(deathSound, .7f);
 
         killCount ++;
+        //enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
         enemiesLeft--;
 
+        Debug.Log(enemiesLeft);
         if(enemiesLeft == 0) {
             SpawnMedkit(rb.position);
             SpawnPortal();
@@ -95,10 +101,10 @@ public class Enemy : MonoBehaviour
     }
 
     public void SpawnPortal(){
-        //Instantiate(medkit, pos + new Vector3(0,3,0), Quaternion.identity);
+        Instantiate(portal, new Vector3(0f,2.6f,30f), portal.transform.rotation * Quaternion.Euler(0f,-90f,0f));
         Debug.Log("portal tryin spawn");
         //portal.SetActive(true); doesnt work bruh
-        portal.transform.position += new Vector3(0, 0, -100);
+        //portal.transform.position += new Vector3(0, 0, -100);
 
     }
 

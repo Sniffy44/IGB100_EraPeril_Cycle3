@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1501411025868775698}
   - component: {fileID: 1501411025868775700}
   - component: {fileID: 1501411025868775699}
+  - component: {fileID: 1029387164476830924}
   m_Layer: 5
   m_Name: Enemies
   m_TagString: Untagged
@@ -135,6 +136,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1029387164476830924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501411025868775697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b68acb7aee45f41868cb9d1233ae9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1501411025868775699}
 --- !u!1 &1501411026207701880
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ae65af699e28045ab28212950c5d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 5186581421915528442}
 --- !u!1 &9026482356225431703
 GameObject:
   m_ObjectHideFlags: 0

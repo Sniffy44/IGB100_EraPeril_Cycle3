@@ -36,12 +36,17 @@ public class PlayerController : MonoBehaviour
     bool isJumping = false;
 
     public ScriptableObject levelData;
+    //public GameObject DataHolderObject;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        GetComponent<PlayerHealth>().health = DataHolderScript.passHealth_Player;
+        GetComponent<PlayerHealth>().AddHealth(0);
+        Debug.Log(GetComponent<PlayerHealth>().health);
     }
 
     // Update is called once per frame
@@ -129,9 +134,15 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter(Collision collision){ // COLLISIONS!!!!!!!!!!!
         //Debug.Log(collision.gameObject.name);
 
-        if(collision.gameObject.name == "Portal"){
+        if(collision.gameObject.tag == "Portal"){
             //levelData.level ++;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            DataHolderScript.passHealth_Player = GetComponent<PlayerHealth>().health;
+
+            Debug.Log(DataHolderScript.passHealth_Player);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
+            //GetComponent<PlayerHealth>().health = DataHolderScript.passHealth_Player;
+            //GetComponent<PlayerHealth>().AddHealth(0);
         }
 
         if(collision.gameObject.name == "Medkit"){

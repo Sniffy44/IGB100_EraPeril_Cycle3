@@ -35,7 +35,7 @@ public class CollisionDetection : MonoBehaviour
             
             enemy.Hit(damageAmount);                                                                                                                   
 
-            UnityEngine.Debug.Log(damageAmount);
+            //UnityEngine.Debug.Log(damageAmount);
 
             AudioSource audioC = GetComponentInParent<AudioSource>();
             audioC.PlayOneShot(hitSound, 0f);
