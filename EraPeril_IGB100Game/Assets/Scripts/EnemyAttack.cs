@@ -8,19 +8,29 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
 
-    public GameObject EnemyWeapon;
-    public bool CanAttack = true;
-    public float AttackCoolDown = 1.0f;
-    public AudioClip SwordAttackSound;
-    public bool isAttacking = false;
+    public GameObject enemyWeapon;
     private float dist;
     private Transform player;
     public float howclose;
-    //public GameObject parent;
+    public float attackSlownessFactor;
+
+    [SerializeField] public WeaponData weaponData;   
+
+    [HideInInspector] public float attackCooldown;// = weaponData.swingTime;
+    [HideInInspector] public float attackingTime;// = weaponData;
+    [HideInInspector] public AudioClip attackSound;// = weaponData.attackAudioClip;
+    [HideInInspector] public float swingAudioVolume;// = weaponData;
+
+    [HideInInspector] public bool isAttacking = false;
+    [HideInInspector] public bool canAttack = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        attackCooldown = weaponData.swingTime;
+        attackSound = weaponData.attackAudioClip;
+        swingAudioVolume = weaponData.audioVolume;
+        attackingTime = weaponData.attackingTime;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -30,15 +40,15 @@ public class EnemyAttack : MonoBehaviour
         if(GetComponentInParent<Enemy>().hasDied == false){
             dist = Vector3.Distance(player.position, transform.position);
 
-            if(dist <= howclose)
-            {
+            //if(dist <= howclose)
+            //{
                 transform.LookAt(player);
-            }
-            if (dist <= 2f)
+            //}
+            if (dist <= 2.5f)
             {
-                if (CanAttack)
+                if (canAttack)
                 {
-                    SwordAttack();
+                    Attack();
                 }
             }
         }
@@ -46,27 +56,27 @@ public class EnemyAttack : MonoBehaviour
         
     }
 
-    public void SwordAttack()
+    public void Attack()
     {
         isAttacking = true;
-        CanAttack = false;
-        Animator anim = EnemyWeapon.GetComponent<Animator>();
+        canAttack = false;
+        Animator anim = enemyWeapon.GetComponent<Animator>();
         anim.SetTrigger("Attack");
         AudioSource ac = GetComponent<AudioSource>();
-        ac.PlayOneShot(SwordAttackSound);
+        ac.PlayOneShot(attackSound);
         StartCoroutine(ResetAttackCooldown());
     }
 
     IEnumerator ResetAttackCooldown()
     {
         StartCoroutine(ResetAttackBool());
-        yield return new WaitForSeconds(AttackCoolDown);
-        CanAttack = true;
+        yield return new WaitForSeconds(attackCooldown * attackSlownessFactor);
+        canAttack = true;
     }
 
     IEnumerator ResetAttackBool()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(attackingTime);
         isAttacking = false;
     }
 

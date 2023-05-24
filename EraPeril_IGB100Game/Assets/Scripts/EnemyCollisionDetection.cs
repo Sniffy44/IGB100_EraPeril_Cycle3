@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyCollisionDetection : MonoBehaviour
 {
-    public EnemyAttack wc;
-    public GameObject HitParticle;
-    public int damageAmount = 10;
+    //public EnemyAttack wc;
+    public GameObject hitParticle;
+    private int damageAmount;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        damageAmount = GetComponentInParent<EnemyAttack>().weaponData.damage;
     }
 
     // Update is called once per frame
@@ -23,19 +23,19 @@ public class EnemyCollisionDetection : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy" && wc.isAttacking)
-        {
-            //Debug.Log(other.name);
-            //other.GetComponent<Animator>().SetTrigger("Hit");
-            Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
-            var enemy = other.GetComponent<Collider>().GetComponent<Enemy>();
+        // if (other.tag == "Enemy" && wc.isAttacking)
+        // {
+        //     //Debug.Log(other.name);
+        //     //other.GetComponent<Animator>().SetTrigger("Hit");
+        //     Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
+        //     var enemy = other.GetComponent<Collider>().GetComponent<Enemy>();
             
-            enemy.Hit(damageAmount);
+        //     enemy.Hit(damageAmount);
             
-        }
-        else if (other.tag == "Player" && wc.isAttacking)
+        // }
+        if (other.tag == "Player" && GetComponentInParent<EnemyAttack>().isAttacking)
         {
-            Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
+            Instantiate(hitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
             other.gameObject.TryGetComponent(out PlayerHealth health);
             health.DecreaseHealth(damageAmount);
         }

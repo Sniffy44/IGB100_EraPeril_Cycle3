@@ -10,6 +10,13 @@ public class PlayerHealth : MonoBehaviour
     public int health = 100;
 
     public HealthBar healthBar;
+    //public GameObject audioObject;
+
+    public AudioSource audio_heartbeat;
+
+    private bool healthLow = false;
+
+    //public AudioClip audioClip_heartBeat;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        audio_heartbeat.enabled = healthLow;
     }
 
     public void AddHealth (int amount)
@@ -29,13 +36,22 @@ public class PlayerHealth : MonoBehaviour
         if(health > maxHealth){
             health = maxHealth;
         }
+        if(health >= 25){
+            healthLow = false;
+        }
         healthBar.SetHealth(health);
-        Debug.Log("Health Increased, Current Health: " + health);
+        //Debug.Log("Health Increased, Current Health: " + health);
     }
 
     public void DecreaseHealth(int amount)
     {
         health -= amount;
+
+        if(health < 25){
+            healthLow = true;
+            //AudioSource audioC = audioObject.GetComponent<AudioSource>();
+            //audioC.PlayOneShot(audioClip_heartBeat, 1f);
+        }
         
         healthBar.SetHealth(health);
 

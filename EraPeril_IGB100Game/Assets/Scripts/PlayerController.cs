@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     bool isGrounded = false;
     bool isJumping = false;
 
+    public ScriptableObject levelData;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -128,6 +130,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(collision.gameObject.name);
 
         if(collision.gameObject.name == "Portal"){
+            //levelData.level ++;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 

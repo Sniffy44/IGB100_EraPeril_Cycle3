@@ -19,10 +19,6 @@ public class WeaponController : MonoBehaviour
     [HideInInspector] public static bool isAttacking = false;
     [HideInInspector] public static bool canAttack = true;
     
-
-    
-    
-
     // Start is called before the first frame update
     void Start()
     {

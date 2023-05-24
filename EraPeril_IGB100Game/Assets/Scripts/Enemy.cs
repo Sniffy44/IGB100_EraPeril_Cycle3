@@ -11,7 +11,6 @@ public class Enemy : MonoBehaviour
 {
     [Header("Configurations")]
     public float health;
-    public int damage;
 
     private PlayerController playerHealth;
 
@@ -27,6 +26,9 @@ public class Enemy : MonoBehaviour
 
     public Rigidbody rb;
     public GameObject medkit;
+    public GameObject portal;
+    private Vector3 portalPos;
+    public ScriptableObject levelData;
 
     private int killCount;
     public static int enemiesLeft;
@@ -39,6 +41,8 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         enemiesLeft = Spawners.level1enemySpawnMax;
+
+        portalPos = portal.transform.position;
     }
 
     // Update is called once per frame
@@ -51,6 +55,8 @@ public class Enemy : MonoBehaviour
             Die(); 
             Invoke("Destroy", 5f);
         }
+
+        Debug.Log(portal.transform.position);
  
     }
 
@@ -69,7 +75,10 @@ public class Enemy : MonoBehaviour
         killCount ++;
         enemiesLeft--;
 
-        if(enemiesLeft == 0) SpawnMedkit(rb.position);
+        if(enemiesLeft == 0) {
+            SpawnMedkit(rb.position);
+            SpawnPortal();
+        }
     }
 
     public void Destroy(){
@@ -83,6 +92,14 @@ public class Enemy : MonoBehaviour
     public void SpawnMedkit(Vector3 pos){
         Debug.Log("medkit tryin spawn");
         Instantiate(medkit, pos + new Vector3(0,3,0), Quaternion.identity);
+    }
+
+    public void SpawnPortal(){
+        //Instantiate(medkit, pos + new Vector3(0,3,0), Quaternion.identity);
+        Debug.Log("portal tryin spawn");
+        //portal.SetActive(true); doesnt work bruh
+        portal.transform.position += new Vector3(0, 0, -100);
+
     }
 
     
