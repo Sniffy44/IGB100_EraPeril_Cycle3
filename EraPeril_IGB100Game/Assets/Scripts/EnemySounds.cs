@@ -14,6 +14,8 @@ public class EnemySounds : MonoBehaviour
 
     private float audioPlayedAtTime;
     private float timeSinceLastAudioPlay;
+
+    public float frequency;
     
     void Start()
     {
@@ -28,7 +30,8 @@ public class EnemySounds : MonoBehaviour
         timeSinceLastAudioPlay = Time.time - audioPlayedAtTime;
 
     
-        if(Random.Range(0,1000) == 5 && timeSinceLastAudioPlay > 2 && GetComponent<Enemy>().hasDied == false){
+        if(Random.Range(0,500*frequency) == 5 && timeSinceLastAudioPlay > 2 && 
+                        GetComponent<Enemy>().hasDied == false){
             audioPlayedAtTime = Time.time;
             clipID = Random.Range(0,4); // random num of 0, 1, 2, or 3  NOT 4
             PlaySoundClip(clipID);

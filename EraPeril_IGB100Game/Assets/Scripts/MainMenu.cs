@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     
     public void PlayGame(){
         SceneManager.LoadScene("S1_Tutorial");
+        Spawners.level = 1;
     }
 
     public void QuitGame(){

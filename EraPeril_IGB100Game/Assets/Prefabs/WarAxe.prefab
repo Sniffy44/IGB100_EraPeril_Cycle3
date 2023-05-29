@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 699214196211651287}
   - component: {fileID: 4062515547372542190}
   - component: {fileID: -1562854473207473719}
+  - component: {fileID: 212474191032608423}
   m_Layer: 0
   m_Name: WarAxe
   m_TagString: Untagged
@@ -60,7 +61,7 @@ Animator:
   m_GameObject: {fileID: 528277805941526884}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bc568e4520cf3774a91d5a6d821c75fd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0296027cfcb45a74f958305cabecaa8a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -90,6 +91,19 @@ MonoBehaviour:
   attackingTime: 0
   attackSound: {fileID: 0}
   swingAudioVolume: 0
+--- !u!65 &212474191032608423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528277805941526884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.168964, y: 2.1123166, z: 1}
+  m_Center: {x: 0.051086005, y: 0.5561583, z: 1.583052e-10}
 --- !u!1 &2657476345199923238
 GameObject:
   m_ObjectHideFlags: 0

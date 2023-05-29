@@ -10,6 +10,8 @@ public class WeaponSwitching : MonoBehaviour{
 [Header("Keys")]
 [SerializeField] private KeyCode[] keys;
 
+public AudioClip switchSound;
+
 private int selectedWeapon;
 
 private void Start(){
@@ -55,6 +57,9 @@ private void Select(int weaponIndex){
 
 private void OnWeaponsSelected(){
     print("Selected new weapon..");
+    AudioSource audioC = GetComponent<AudioSource>();
+    audioC.PlayOneShot(switchSound, 0.2f);
+
 }
 
 

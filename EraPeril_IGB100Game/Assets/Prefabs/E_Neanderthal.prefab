@@ -7495,6 +7495,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1662700531633786138, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
+      propertyPath: frequency
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394289083012096534, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5394289083012096534, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
       value: 0.902565

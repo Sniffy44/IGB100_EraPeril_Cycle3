@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
         // Audio
         audioWalk.enabled = isMovingOnGround;
+        if(PauseMenu.gamePaused) audioWalk.enabled = false;
         audioWalk.pitch = Input.GetKey(KeyCode.LeftShift) ? 1.75f : 1f;
 
     }

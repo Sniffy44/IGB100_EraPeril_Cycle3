@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody rb;
     public GameObject medkit;
     public GameObject portal;
-    private Vector3 portalPos;
+    //private Vector3 portalPos;
     public ScriptableObject levelData;
 
     private int killCount;
@@ -41,9 +41,7 @@ public class Enemy : MonoBehaviour
         enemy = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        enemiesLeft = Spawners.level1enemySpawnMax;
-
-        portalPos = portal.transform.position;
+        //portalPos = portal.transform.position;
     }
 
     // Update is called once per frame
@@ -101,7 +99,15 @@ public class Enemy : MonoBehaviour
     }
 
     public void SpawnPortal(){
-        Instantiate(portal, new Vector3(0f,2.6f,30f), portal.transform.rotation * Quaternion.Euler(0f,-90f,0f));
+        if(Spawners.level == 1){
+            Instantiate(portal, new Vector3(0f,2.6f,30f), 
+                portal.transform.rotation * Quaternion.Euler(0f,-90f,0f));
+        }
+        if(Spawners.level == 2){
+            Instantiate(portal, new Vector3(39.8f,2.64f,0f), 
+                portal.transform.rotation * Quaternion.Euler(0f,0f,0f));
+        }
+        
         Debug.Log("portal tryin spawn");
         //portal.SetActive(true); doesnt work bruh
         //portal.transform.position += new Vector3(0, 0, -100);

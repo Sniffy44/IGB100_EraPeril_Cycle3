@@ -24,7 +24,7 @@ public class CollisionDetection : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if(other.tag == "Enemy" && WeaponController.isAttacking)
         {
@@ -41,6 +41,8 @@ public class CollisionDetection : MonoBehaviour
             audioC.PlayOneShot(hitSound, 0f);
 
             Vector3 dir = new Vector3(0,10,0);
+
+            WeaponController.isAttacking = false;
 
             //enemy.GetComponent<Rigidbody>().AddForce(enemy.GetComponent<Rigidbody>().velocity * -1, ForceMode.VelocityChange);
             //StartCoroutine(Bounce());

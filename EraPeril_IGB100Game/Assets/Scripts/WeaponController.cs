@@ -34,7 +34,7 @@ public class WeaponController : MonoBehaviour
     {
         if (player == true)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !PauseMenu.gamePaused)
             {
                 if (canAttack)
                 {
