@@ -7497,7 +7497,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1662700531633786138, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: frequency
-      value: 2
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5394289083012096534, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: rolloffMode

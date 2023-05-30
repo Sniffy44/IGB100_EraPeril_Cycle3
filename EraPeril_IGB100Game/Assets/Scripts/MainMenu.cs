@@ -5,10 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+     void Update(){
+        if(Input.GetKeyDown(KeyCode.S)){
+            PlayGame();
+        }
+     }
     
     public void PlayGame(){
-        SceneManager.LoadScene("S1_Tutorial");
         Spawners.level = 1;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        SceneManager.LoadScene("S1_Tutorial");
+        
     }
 
     public void QuitGame(){

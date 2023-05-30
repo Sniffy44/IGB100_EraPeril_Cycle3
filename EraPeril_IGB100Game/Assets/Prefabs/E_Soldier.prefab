@@ -759,7 +759,7 @@ MonoBehaviour:
   audioClip2: {fileID: 8300000, guid: 8838c78ba8d7269468998065eb88ffcb, type: 3}
   audioClip3: {fileID: 8300000, guid: a351c6e4a75430042a4bbe969fb4df80, type: 3}
   audioClip4: {fileID: 8300000, guid: 8838c78ba8d7269468998065eb88ffcb, type: 3}
-  frequency: 8
+  frequency: 5
 --- !u!82 &7647851956274365881
 AudioSource:
   m_ObjectHideFlags: 0

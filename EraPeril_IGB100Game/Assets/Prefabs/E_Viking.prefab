@@ -2189,4 +2189,4 @@ MonoBehaviour:
   audioClip2: {fileID: 8300000, guid: 8838c78ba8d7269468998065eb88ffcb, type: 3}
   audioClip3: {fileID: 8300000, guid: e4864ad10fa3d0645bdfcdf2efe7b0a8, type: 3}
   audioClip4: {fileID: 8300000, guid: a631a030b31cb2d49b555f694f2de8bd, type: 3}
-  frequency: 4
+  frequency: 5

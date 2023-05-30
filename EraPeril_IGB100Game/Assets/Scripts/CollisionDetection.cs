@@ -54,6 +54,7 @@ public class CollisionDetection : MonoBehaviour
         if(other.tag == "Medkit" && WeaponController.isAttacking){
             Vector3 dir = new Vector3(0,10,0);
             other.GetComponent<Rigidbody>().AddForce(dir, ForceMode.VelocityChange);
+            WeaponController.isAttacking = false;
             //other.gameObject.TryGetComponent(out PlayerHealth health);
             //GetComponentInParent<PlayerHealth>().AddHealth(50);
         }

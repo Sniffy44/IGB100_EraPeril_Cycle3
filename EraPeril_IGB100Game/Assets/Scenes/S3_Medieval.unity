@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3665,6 +3665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 222568797134060067, guid: 4ad1629749324494db36f426de15f216, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1467377025}
     - target: {fileID: 222568797134060078, guid: 4ad1629749324494db36f426de15f216, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3723,6 +3727,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ad1629749324494db36f426de15f216, type: 3}
+--- !u!1 &105404302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 222568796420972320, guid: 4ad1629749324494db36f426de15f216, type: 3}
+  m_PrefabInstance: {fileID: 105404301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &105407442
 GameObject:
   m_ObjectHideFlags: 0
@@ -14571,6 +14580,7 @@ MonoBehaviour:
   - {fileID: 1336938177}
   - {fileID: 1986176717}
   Player: {fileID: 1726672848}
+  playerObject: {fileID: 105404302}
 --- !u!4 &309962932
 Transform:
   m_ObjectHideFlags: 0
@@ -25504,6 +25514,10 @@ PrefabInstance:
     - target: {fileID: 2201789180847609451, guid: 6760076b8df92974b892e3ee3d0e7791, type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201789180847609451, guid: 6760076b8df92974b892e3ee3d0e7791, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6760076b8df92974b892e3ee3d0e7791, type: 3}
@@ -107013,8 +107027,27 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7178474864884241457, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -186
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178474864884241457, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -133
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
+--- !u!114 &1467377025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5932285093328582621, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
+  m_PrefabInstance: {fileID: 1467377024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ae65af699e28045ab28212950c5d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1468226388
 GameObject:
   m_ObjectHideFlags: 0
@@ -128410,7 +128443,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 222568797134060065, guid: 4ad1629749324494db36f426de15f216, type: 3}
   m_PrefabInstance: {fileID: 105404301}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 105404302}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1ec0ff831d1be4285689bb2db4d88a, type: 3}
