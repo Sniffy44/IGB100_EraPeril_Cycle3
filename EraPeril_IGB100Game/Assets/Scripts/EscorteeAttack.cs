@@ -8,18 +8,27 @@ using UnityEngine;
 public class EscorteeAttack : MonoBehaviour
 {
     public GameObject escorteeWeapon;
-    public bool canAttack = true;
-    public float attackCooldown = 1.0f;
-    public AudioClip attackSound;
-    public bool isAttacking = false;
     private float dist_toPlayer;
     private float dist_toEnemy;
     private Transform player;
-    public float howclose;
+
+    [SerializeField] public WeaponData weaponData;   
+
+    [HideInInspector] public float attackCooldown;// = weaponData.swingTime;
+    [HideInInspector] public float attackingTime;// = weaponData;
+    [HideInInspector] public AudioClip attackSound;// = weaponData.attackAudioClip;
+    [HideInInspector] public float swingAudioVolume;// = weaponData;
+
+    [HideInInspector] public bool isAttacking = false;
+    [HideInInspector] public bool canAttack = true;
     //public GameObject parent;
 
     // Start is called before the first frame update
     void Start(){
+        attackCooldown = weaponData.swingTime;
+        attackSound = weaponData.attackAudioClip;
+        swingAudioVolume = weaponData.audioVolume;
+        attackingTime = weaponData.attackingTime;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -28,9 +37,9 @@ public class EscorteeAttack : MonoBehaviour
         
             //dist_toPlayer = Vector3.Distance(player.position, transform.position);
 
-            if(dist_toPlayer <= howclose){
-               // transform.LookAt(player);
-            }
+            //if(dist_toPlayer >= movementDeciderDist){
+                //transform.LookAt(player);
+            //}
             // if (dist <= 2f){
             //     if (canAttack){
             //         Attack();
@@ -38,6 +47,16 @@ public class EscorteeAttack : MonoBehaviour
             // }
         
         
+    }
+
+    public void CheckDistanceToEnemy(float distance){
+        //Debug.Log(distance);
+        if(distance <= 2f){
+            if(canAttack){
+                Attack();
+            }
+        }
+
     }
 
     public void Attack()

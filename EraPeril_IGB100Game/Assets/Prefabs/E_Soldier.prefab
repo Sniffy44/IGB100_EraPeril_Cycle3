@@ -719,7 +719,7 @@ MonoBehaviour:
   hasDied: 0
   rb: {fileID: 5661773012131103614}
   medkit: {fileID: 5839222725064417186, guid: dff55bfc5cb2a3a4487a09b583accbd8, type: 3}
-  portal: {fileID: 0}
+  portal: {fileID: 2201789180847609451, guid: 6760076b8df92974b892e3ee3d0e7791, type: 3}
   levelData: {fileID: 0}
 --- !u!195 &5661773012131103600
 NavMeshAgent:

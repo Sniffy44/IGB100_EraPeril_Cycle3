@@ -11,6 +11,7 @@ public class EnemyAttack : MonoBehaviour
     public GameObject enemyWeapon;
     private float dist;
     private Transform player;
+    private Transform escort;
     public float howclose;
     public float attackSlownessFactor;
 
@@ -37,6 +38,7 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(GetComponentInParent<Enemy>().hasDied == false){
             dist = Vector3.Distance(player.position, transform.position);
 
@@ -54,6 +56,12 @@ public class EnemyAttack : MonoBehaviour
         }
         
         
+    }
+
+    public void ShouldAttackEscort(float distance){
+        if(distance <= 2.5){
+            if(canAttack) Attack();
+        }
     }
 
     public void Attack()

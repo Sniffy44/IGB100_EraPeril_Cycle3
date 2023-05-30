@@ -16,6 +16,9 @@ public class Enemy : MonoBehaviour
 
     public NavMeshAgent enemy;
     private Transform player;
+    private Transform escort;
+
+    private float distToEscort;
 
     public float howclose;
 
@@ -33,6 +36,8 @@ public class Enemy : MonoBehaviour
     private int killCount;
     public static int enemiesLeft;
 
+    private bool targetingPlayerNotEscort;
+
 
 
     // Start is called before the first frame update
@@ -40,6 +45,13 @@ public class Enemy : MonoBehaviour
     {
         enemy = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        escort = GameObject.FindGameObjectWithTag("Escortee").transform;
+
+        if(UnityEngine.Random.Range(1,101) >= 25){ // 75% to target player
+            targetingPlayerNotEscort = true;
+        } else { // 25% to tartget escortee
+            targetingPlayerNotEscort = false;
+        }
 
         //portalPos = portal.transform.position;
     }
@@ -47,7 +59,17 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!hasDied) enemy.SetDestination(player.position);
+        if(!hasDied) {
+            if(targetingPlayerNotEscort) enemy.SetDestination(player.position);
+            if(!targetingPlayerNotEscort){
+
+                enemy.SetDestination(escort.position);
+                distToEscort = Vector3.Distance(transform.position, escort.position);
+                transform.LookAt(escort);
+                gameObject.GetComponentInChildren<EnemyAttack>().ShouldAttackEscort(distToEscort);
+            }
+            
+        }
 
         if(health <= 0 && !hasDied){
             hasDied = true;
@@ -105,6 +127,10 @@ public class Enemy : MonoBehaviour
         }
         if(Spawners.level == 2){
             Instantiate(portal, new Vector3(39.8f,2.64f,0f), 
+                portal.transform.rotation * Quaternion.Euler(0f,0f,0f));
+        }
+        if(Spawners.level == 3){
+            Instantiate(portal, new Vector3(0.8f,2.65f,3f), 
                 portal.transform.rotation * Quaternion.Euler(0f,0f,0f));
         }
         

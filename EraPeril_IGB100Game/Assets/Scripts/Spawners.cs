@@ -12,10 +12,11 @@ public class Spawners : MonoBehaviour
     public Transform[] SpawnPoints;
     public PlayerController Player;
     public GameObject playerObject;
+    public GameObject escortObject;
     
     public static int level;
 
-    public static int level1enemySpawnMax = 3;
+    public static int level1enemySpawnMax = 6;
     public static int level2enemySpawnMax = 3;
     public static int level3enemySpawnMax = 3;
     private int enemiesLeftToSpawn;
@@ -36,6 +37,7 @@ public class Spawners : MonoBehaviour
             level = 1;
             Enemy.enemiesLeft = level1enemySpawnMax;
             playerObject.GetComponent<PlayerHealth>().AddHealth(100);
+            escortObject.GetComponent<Escortee>().AddHealth(100);
         } 
         if(SceneManager.GetActiveScene().name == "S3_Medieval"){
             enemiesLeftToSpawn = level2enemySpawnMax;

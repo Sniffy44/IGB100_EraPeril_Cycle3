@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCollisionDetection : MonoBehaviour
+public class EscortCollisionDetection : MonoBehaviour
 {
     //public EnemyAttack wc;
     public GameObject hitParticle;
@@ -12,7 +12,7 @@ public class EnemyCollisionDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damageAmount = GetComponentInParent<EnemyAttack>().weaponData.damage;
+        damageAmount = GetComponentInParent<EscorteeAttack>().weaponData.damage;
     }
 
     // Update is called once per frame
@@ -33,22 +33,14 @@ public class EnemyCollisionDetection : MonoBehaviour
         //     enemy.Hit(damageAmount);
             
         // }
-        if (other.tag == "Player" && GetComponentInParent<EnemyAttack>().isAttacking){
-
+        if (other.tag == "Enemy" && GetComponentInParent<EscorteeAttack>().isAttacking)
+        {
             Instantiate(hitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
-            other.gameObject.TryGetComponent(out PlayerHealth health);
-            health.DecreaseHealth(damageAmount);
-
-            GetComponentInParent<EnemyAttack>().isAttacking = false;
-        }
-
-        if (other.tag == "Escortee" && GetComponentInParent<EnemyAttack>().isAttacking){
             
-            Instantiate(hitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
-            var escort = other.GetComponent<Collider>().GetComponent<Escortee>();
-            escort.Hit(damageAmount);    
+            var enemy = other.GetComponent<Collider>().GetComponent<Enemy>();
+            enemy.Hit(damageAmount);  
 
-            GetComponentInParent<EnemyAttack>().isAttacking = false;
+            GetComponentInParent<EscorteeAttack>().isAttacking = false;
         }
 
     }
