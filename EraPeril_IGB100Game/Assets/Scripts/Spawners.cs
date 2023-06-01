@@ -16,7 +16,7 @@ public class Spawners : MonoBehaviour
     
     public static int level;
 
-    public static int level1enemySpawnMax = 6;
+    public static int level1enemySpawnMax = 2;
     public static int level2enemySpawnMax = 3;
     public static int level3enemySpawnMax = 3;
     private int enemiesLeftToSpawn;
@@ -68,7 +68,7 @@ public class Spawners : MonoBehaviour
             Instantiate(EnemyPrefab, randomSpawnPoint.position, Quaternion.identity);
             LastSpawnTime = Time.time;
 
-            Debug.Log("enemy jus spawned ha");
+            //Debug.Log("enemy jus spawned ha");
 
             enemiesLeftToSpawn --;
             

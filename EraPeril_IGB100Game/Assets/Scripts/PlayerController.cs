@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
     bool isJumping = false;
 
     public ScriptableObject levelData;
+    private GameObject escortee;
+
+    public bool lookingAtMedkit = false;
+
+    [SerializeField] private LayerMask interactLayerMask;
     //public GameObject DataHolderObject;
 
     // Start is called before the first frame update
@@ -46,7 +51,9 @@ public class PlayerController : MonoBehaviour
 
         GetComponent<PlayerHealth>().health = DataHolderScript.passHealth_Player;
         GetComponent<PlayerHealth>().AddHealth(0);
-        Debug.Log(GetComponent<PlayerHealth>().health);
+
+        escortee = GameObject.FindGameObjectWithTag("Escortee");
+        //Debug.Log(GetComponent<PlayerHealth>().health);
     }
 
     // Update is called once per frame
@@ -86,10 +93,18 @@ public class PlayerController : MonoBehaviour
         if(PauseMenu.gamePaused) audioWalk.enabled = false;
         audioWalk.pitch = Input.GetKey(KeyCode.LeftShift) ? 1.75f : 1f;
 
+
+        
+
     }
 
     void FixedUpdate()
     {
+        if(Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit raycastHit, 6f, interactLayerMask)){
+            lookingAtMedkit = true;
+        } else {
+            lookingAtMedkit = false;
+        }
         
         
     }
@@ -138,6 +153,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Portal"){
             //levelData.level ++;
             DataHolderScript.passHealth_Player = GetComponent<PlayerHealth>().health;
+            if(escortee != null) DataHolderScript.passHealth_Escortee = escortee.GetComponent<Escortee>().health;
 
             Debug.Log(DataHolderScript.passHealth_Player);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

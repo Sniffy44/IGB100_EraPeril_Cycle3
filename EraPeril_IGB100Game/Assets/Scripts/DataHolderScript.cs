@@ -12,6 +12,8 @@ public class DataHolderScript : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(transform.gameObject);
+        //public static int passHealth_Player = 100;
+        //public static int passHealth_Escortee = 100;
     }
 
     // Update is called once per frame

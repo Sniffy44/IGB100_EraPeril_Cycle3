@@ -13711,6 +13711,7 @@ MonoBehaviour:
   SpawnPoints: []
   Player: {fileID: 521880464}
   playerObject: {fileID: 521880465}
+  escortObject: {fileID: 0}
 --- !u!4 &1085906553
 Transform:
   m_ObjectHideFlags: 0
@@ -23585,6 +23586,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4123860084408786287, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123860084408786287, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5520276749578144846, guid: 8160031aceafd7b49968fc77c50f0e25, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -28630,6 +28639,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6377857278442007455, guid: dff55bfc5cb2a3a4487a09b583accbd8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dff55bfc5cb2a3a4487a09b583accbd8, type: 3}
 --- !u!4 &6036595278916863777
@@ -29296,17 +29309,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8402062166248081128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e404f71b613a8b45bc03edab0ca089e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   escorteeWeapon: {fileID: 0}
-  canAttack: 1
+  weaponData: {fileID: 0}
   attackCooldown: 1
+  attackingTime: 0
   attackSound: {fileID: 0}
+  swingAudioVolume: 0
   isAttacking: 0
-  howclose: 0
+  canAttack: 1
 --- !u!195 &8402062167466157207
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -29426,7 +29441,6 @@ GameObject:
   - component: {fileID: 8402062167466157213}
   - component: {fileID: 8402062167466157209}
   - component: {fileID: 8402062167466157207}
-  - component: {fileID: 8402062167466157214}
   m_Layer: 0
   m_Name: Escortee
   m_TagString: Enemy
@@ -29448,22 +29462,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8402062167466157214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402062167466157212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b2e1b91302b0384eb32a98f616aa140, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
-  stoppingDistance: 15
-  rb: {fileID: 8402062167466157209}
 --- !u!33 &8554991385357459574
 MeshFilter:
   m_ObjectHideFlags: 0

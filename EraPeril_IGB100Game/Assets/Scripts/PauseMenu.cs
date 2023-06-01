@@ -10,6 +10,14 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    private GameObject player;
+    private GameObject escortee;
+
+    void Start(){
+        player = GameObject.FindGameObjectWithTag("Player");
+        escortee = GameObject.FindGameObjectWithTag("Escortee");
+    }
+
     // Update is called once per frame
     void Update(){
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)){
@@ -26,6 +34,10 @@ public class PauseMenu : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Q)){
                 QuitGame();
             }
+        }
+
+        if(player.GetComponent<PlayerController>().lookingAtMedkit){
+            MedkitMenu();
         }
     }
 
@@ -47,6 +59,8 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMainMenu(){
         Debug.Log("wowza main menu was pressed");
+        DataHolderScript.passHealth_Player = player.GetComponent<PlayerHealth>().maxHealth;
+        DataHolderScript.passHealth_Escortee = escortee.GetComponent<Escortee>().maxHealth;
         SceneManager.LoadScene(0);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -56,5 +70,9 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame(){
         Debug.Log("wowza Quit was pressed");
         Application.Quit();
+    }
+
+    private void MedkitMenu(){
+
     }
 }
