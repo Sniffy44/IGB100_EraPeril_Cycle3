@@ -40,7 +40,7 @@ public class CollisionDetection : MonoBehaviour
             AudioSource audioC = GetComponentInParent<AudioSource>();
             audioC.PlayOneShot(hitSound, 0f);
 
-            Vector3 dir = new Vector3(0,10,0);
+            //Vector3 dir = new Vector3(0,10,0);
 
             WeaponController.isAttacking = false;
 
@@ -48,6 +48,21 @@ public class CollisionDetection : MonoBehaviour
             //StartCoroutine(Bounce());
 
             //other.GetComponent<Rigidbody>().AddForce(dir, ForceMode.VelocityChange);
+            
+        }
+        if(other.tag == "Escortee" && Spawners.level == 4 && WeaponController.isAttacking)
+        {
+            //UnityEngine.Debug.Log(other.name);
+            //other.GetComponent<Animator>().SetTrigger("Hit");
+            if(HitParticle != null) Instantiate(HitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
+            var enemy = other.GetComponent<Collider>().GetComponent<EvEscortee>();
+            
+            enemy.Hit(damageAmount);                                                                                                                   
+
+            AudioSource audioC = GetComponentInParent<AudioSource>();
+            audioC.PlayOneShot(hitSound, 0f);
+
+            WeaponController.isAttacking = false;
             
         }
 

@@ -40,8 +40,8 @@ public class Escortee : MonoBehaviour
         //enemy = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        GetComponent<Escortee>().health = DataHolderScript.passHealth_Escortee;
-        GetComponent<Escortee>().AddHealth(0);
+        health = DataHolderScript.passHealth_Escortee;
+        AddHealth(0);
         if(health <= (maxHealth/2)) isConfident = false;
         
         //health = maxHealth;

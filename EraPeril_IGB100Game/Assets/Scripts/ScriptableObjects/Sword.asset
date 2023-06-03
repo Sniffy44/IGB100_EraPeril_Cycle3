@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sword
   weaponModelObject: {fileID: 5824416922789988002, guid: 0da4abd68623a374aaebca71cb81e561, type: 3}
-  damage: 10
+  damage: 12
   swingTime: 1
   attackingTime: 0.5
   isThrowable: 0

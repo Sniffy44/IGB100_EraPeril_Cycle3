@@ -711,14 +711,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45580b06df5d8f24c92683a088f1210c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 40
   enemy: {fileID: 5661773012131103600}
   howclose: 0
   hitSound: {fileID: 8300000, guid: 9cb7c03892b0df84ab92a3f71694b052, type: 3}
   deathSound: {fileID: 8300000, guid: c3b3e252e56c99548a006ffc82a088bb, type: 3}
   hasDied: 0
   rb: {fileID: 5661773012131103614}
-  medkit: {fileID: 5839222725064417186, guid: dff55bfc5cb2a3a4487a09b583accbd8, type: 3}
+  medkit: {fileID: 5749551460102396108, guid: 96c647439c2534343a4583bb60ae9d42, type: 3}
   portal: {fileID: 2201789180847609451, guid: 6760076b8df92974b892e3ee3d0e7791, type: 3}
   levelData: {fileID: 0}
 --- !u!195 &5661773012131103600

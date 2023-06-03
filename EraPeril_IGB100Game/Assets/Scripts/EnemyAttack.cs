@@ -44,10 +44,11 @@ public class EnemyAttack : MonoBehaviour
 
             //if(dist <= howclose)
             //{
-                transform.LookAt(player);
+                //transform.LookAt(player);
             //}
             if (dist <= 2.5f)
             {
+                transform.LookAt(player);
                 if (canAttack)
                 {
                     Attack();

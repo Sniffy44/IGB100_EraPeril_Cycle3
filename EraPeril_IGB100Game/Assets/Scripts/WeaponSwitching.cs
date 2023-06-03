@@ -15,6 +15,7 @@ public AudioClip switchSound;
 private int selectedWeapon;
 
 private void Start(){
+   // if(Spawners.level == 1) 
     SetWeapons();
     Select(selectedWeapon);
 }
@@ -56,9 +57,9 @@ private void Select(int weaponIndex){
 
 
 private void OnWeaponsSelected(){
-    print("Selected new weapon..");
+    //rint("Selected new weapon..");
     AudioSource audioC = GetComponent<AudioSource>();
-    audioC.PlayOneShot(switchSound, 0.2f);
+    audioC.PlayOneShot(switchSound, 0.15f);
 
 }
 

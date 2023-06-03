@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Trench Knife
   weaponModelObject: {fileID: 5515989889125747472, guid: 67b811934dd730e4894963f3d6410a02, type: 3}
-  damage: 12
+  damage: 10
   swingTime: 0.75
   attackingTime: 0.25
   isThrowable: 0

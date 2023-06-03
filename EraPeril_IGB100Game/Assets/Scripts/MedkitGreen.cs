@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Medkit : MonoBehaviour
+public class MedkitGreen : MonoBehaviour
 {
     private GameObject player;
+    private GameObject escortee;
     private bool isLookedAt;
 
     public GameObject text;
-
-    public bool medMenuOpen = false;
-
-    public int healAmount = 100;
 
 
 
@@ -19,6 +16,7 @@ public class Medkit : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        escortee = GameObject.FindGameObjectWithTag("Escortee");
     }
 
     // Update is called once per frame
@@ -29,15 +27,12 @@ public class Medkit : MonoBehaviour
         
         text.SetActive(isLookedAt);
 
-        if(medMenuOpen){
-            if(Input.GetKeyDown(KeyCode.E)) medMenuOpen = false;
-
-        }
-        if(isLookedAt && Input.GetKeyDown(KeyCode.E) && !medMenuOpen){
-            medMenuOpen = true;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            Debug.Log("pressed E medkit");
+        if(isLookedAt && Input.GetKeyDown(KeyCode.E)){
+            player.GetComponent<PlayerHealth>().AddHealth(250);
+            escortee.GetComponent<Escortee>().AddHealth(250);
+            //isLookedAt = false;
+            Destroy(gameObject);
+            
         }
 
         

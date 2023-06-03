@@ -1771,7 +1771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyWeapon: {fileID: 5705457309000173366}
   howclose: 0
-  attackSlownessFactor: 2
+  attackSlownessFactor: 3
   weaponData: {fileID: 11400000, guid: 38f39d032801b514f89d829d9550b0bd, type: 2}
   attackCooldown: 0
   attackingTime: 0
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45580b06df5d8f24c92683a088f1210c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 35
   enemy: {fileID: 8720702983945855242}
   howclose: 0
   hitSound: {fileID: 8300000, guid: 9cb7c03892b0df84ab92a3f71694b052, type: 3}

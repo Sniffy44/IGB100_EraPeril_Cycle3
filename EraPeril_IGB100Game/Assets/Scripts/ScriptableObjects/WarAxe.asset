@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: War Axe
   weaponModelObject: {fileID: 528277805941526884, guid: 4af0d691177fdf3418760361ca00c152, type: 3}
-  damage: 35
+  damage: 25
   swingTime: 2
   attackingTime: 0.7
   isThrowable: 0

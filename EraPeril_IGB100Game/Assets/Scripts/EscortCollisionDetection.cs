@@ -43,5 +43,17 @@ public class EscortCollisionDetection : MonoBehaviour
             GetComponentInParent<EscorteeAttack>().isAttacking = false;
         }
 
+        if(Spawners.level == 4){ // EVILLLLL
+            if (other.tag == "Player" && GetComponentInParent<EscorteeAttack>().isAttacking)
+        {
+            Instantiate(hitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
+            
+            other.gameObject.TryGetComponent(out PlayerHealth health);
+            health.DecreaseHealth(damageAmount); 
+
+            GetComponentInParent<EscorteeAttack>().isAttacking = false;
+        }
+        }
+
     }
 }

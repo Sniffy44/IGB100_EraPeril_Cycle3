@@ -7573,7 +7573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8546037960753939896, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: health
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8546037960753939896, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: portal

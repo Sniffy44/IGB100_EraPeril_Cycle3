@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 //using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     //public GameObject audioObject;
 
     public AudioSource audio_heartbeat;
+
+    public AudioClip owSound;
 
     private bool healthLow = false;
 
@@ -47,6 +50,9 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= amount;
 
+        AudioSource audioC = GetComponentInChildren<AudioSource>();
+        audioC.PlayOneShot(owSound, .7f);
+
         if(health < 25){
             healthLow = true;
             //AudioSource audioC = audioObject.GetComponent<AudioSource>();
@@ -57,7 +63,9 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene(6);
             //Debug.Log("Player is dead!");
         }
     }

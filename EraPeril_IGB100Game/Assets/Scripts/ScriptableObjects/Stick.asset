@@ -19,6 +19,6 @@ MonoBehaviour:
   attackingTime: 0.25
   isThrowable: 0
   attackAudioClip: {fileID: 8300000, guid: 1a4879bbf51df6946aedaae57639a19e, type: 3}
-  audioVolume: 1
+  audioVolume: 0.8
   isAttacking: 0
   canBeSwung: 1

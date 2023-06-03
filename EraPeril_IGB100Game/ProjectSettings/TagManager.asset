@@ -8,6 +8,7 @@ TagManager:
   - Medkit
   - Portal
   - Escortee
+  - MedkitGreen
   layers:
   - Default
   - TransparentFX

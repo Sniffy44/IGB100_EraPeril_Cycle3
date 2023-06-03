@@ -16,12 +16,15 @@ public class Spawners : MonoBehaviour
     
     public static int level;
 
-    public static int level1enemySpawnMax = 2;
-    public static int level2enemySpawnMax = 3;
-    public static int level3enemySpawnMax = 3;
+    public static int level1enemySpawnMax = 12;
+    public static int level2enemySpawnMax = 10;
+    public static int level3enemySpawnMax = 15;
     private int enemiesLeftToSpawn;
 
     private float LastSpawnTime;
+
+    public HealthBar healthBarPlayer;
+    public HealthBar healthBarEscortee;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,7 @@ public class Spawners : MonoBehaviour
             enemiesLeftToSpawn = level1enemySpawnMax;
             level = 1;
             Enemy.enemiesLeft = level1enemySpawnMax;
+            healthBarPlayer.SetMaxHealth(100);
             playerObject.GetComponent<PlayerHealth>().AddHealth(100);
             escortObject.GetComponent<Escortee>().AddHealth(100);
         } 
@@ -50,8 +54,12 @@ public class Spawners : MonoBehaviour
             Enemy.enemiesLeft = level3enemySpawnMax;
         }
         if(SceneManager.GetActiveScene().name == "S5_Final"){
-            level = 3;
+            level = 4;
             Enemy.enemiesLeft = 1;
+            //healthBarPlayer.SetMaxHealth(400);
+            healthBarEscortee.SetMaxHealth(400);
+            //playerObject.GetComponent<PlayerHealth>().AddHealth(400);
+            escortObject.GetComponent<EvEscortee>().AddHealth(400);
         }
         
     }

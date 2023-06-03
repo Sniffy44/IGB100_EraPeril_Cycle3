@@ -26,7 +26,7 @@ public class MedkitMenu : MonoBehaviour
     public void MedkitToPlayer(){
         Debug.Log("player heal");
         
-        player.GetComponent<PlayerHealth>().AddHealth(75);
+        player.GetComponent<PlayerHealth>().AddHealth(medkit.GetComponent<Medkit>().healAmount);
         medkit.GetComponent<Medkit>().medMenuOpen = false;
 
         Cursor.visible = false;
@@ -39,7 +39,7 @@ public class MedkitMenu : MonoBehaviour
     public void MedkitToEscortee(){
         Debug.Log("escort heal");
         
-        escortee.GetComponent<Escortee>().AddHealth(75);
+        escortee.GetComponent<Escortee>().AddHealth(medkit.GetComponent<Medkit>().healAmount);
         medkit.GetComponent<Medkit>().medMenuOpen = false;
 
         Cursor.visible = false;

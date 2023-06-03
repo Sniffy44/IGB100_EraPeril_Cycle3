@@ -60,7 +60,10 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if(!hasDied) {
-            if(targetingPlayerNotEscort) enemy.SetDestination(player.position);
+            if(targetingPlayerNotEscort){
+                enemy.SetDestination(player.position);
+                transform.LookAt(player);
+            } 
             if(!targetingPlayerNotEscort){
 
                 enemy.SetDestination(escort.position);

@@ -36,7 +36,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if(player.GetComponent<PlayerController>().lookingAtMedkit){
+        if(player != null && player.GetComponent<PlayerController>().lookingAtMedkit){
             MedkitMenu();
         }
     }
@@ -59,8 +59,8 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMainMenu(){
         Debug.Log("wowza main menu was pressed");
-        DataHolderScript.passHealth_Player = player.GetComponent<PlayerHealth>().maxHealth;
-        DataHolderScript.passHealth_Escortee = escortee.GetComponent<Escortee>().maxHealth;
+        //DataHolderScript.passHealth_Player = player.GetComponent<PlayerHealth>().maxHealth; 
+        //DataHolderScript.passHealth_Escortee = escortee.GetComponent<Escortee>().maxHealth;
         SceneManager.LoadScene(0);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
