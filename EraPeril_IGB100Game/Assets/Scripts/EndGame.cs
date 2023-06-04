@@ -20,6 +20,9 @@ public class EndGame : MonoBehaviour
     }
 
     public void GameEndVictory(){
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene(7);
         //playerCamera.SetActive(false);
         //endCamera.SetActive(true);
         //endCamera.position = new Vector3(endCamera.position.x, endCamera.position.y + 0.1f ,endCamera.position.z);

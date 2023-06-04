@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
             DataHolderScript.passHealth_Player = GetComponent<PlayerHealth>().health;
             if(escortee != null) DataHolderScript.passHealth_Escortee = escortee.GetComponent<Escortee>().health;
 
-            Debug.Log(DataHolderScript.passHealth_Player);
+            //Debug.Log(DataHolderScript.passHealth_Player);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             
             //GetComponent<PlayerHealth>().health = DataHolderScript.passHealth_Player;

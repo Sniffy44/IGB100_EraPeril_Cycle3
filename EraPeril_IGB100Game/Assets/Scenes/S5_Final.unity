@@ -20239,6 +20239,7 @@ MonoBehaviour:
   - {fileID: 1379125863}
   - {fileID: 918317292}
   angrySound: {fileID: 8300000, guid: e4864ad10fa3d0645bdfcdf2efe7b0a8, type: 3}
+  DialogueBox: {fileID: 1897775174}
 --- !u!82 &6996284624279196337
 AudioSource:
   m_ObjectHideFlags: 0

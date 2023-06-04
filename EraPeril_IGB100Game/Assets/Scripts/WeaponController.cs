@@ -32,8 +32,8 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player == true)
-        {
+        //if (player == true)
+        //{
             if (Input.GetMouseButtonDown(0) && !PauseMenu.gamePaused)
             {
                 if (canAttack)
@@ -41,7 +41,7 @@ public class WeaponController : MonoBehaviour
                     Attack();
                 }
             }
-        }
+        //}
 
         //Debug.Log(isAttacking);
         

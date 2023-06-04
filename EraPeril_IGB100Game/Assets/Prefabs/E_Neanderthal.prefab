@@ -7356,6 +7356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 1346074891634586851, guid: b5b483fdc37ce0c42a65b3621df9aba1, type: 3}
+  damageMitigator: 0
 --- !u!95 &3213626714868552961
 Animator:
   serializedVersion: 5
@@ -7498,6 +7499,10 @@ PrefabInstance:
     - target: {fileID: 1662700531633786138, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: frequency
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662700531633786138, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
+      propertyPath: frequencyTopRange
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5394289083012096534, guid: 312b4a2bea900ae46b811fd2a99cdb81, type: 3}
       propertyPath: rolloffMode

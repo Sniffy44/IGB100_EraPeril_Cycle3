@@ -759,7 +759,7 @@ MonoBehaviour:
   audioClip2: {fileID: 8300000, guid: 8838c78ba8d7269468998065eb88ffcb, type: 3}
   audioClip3: {fileID: 8300000, guid: a351c6e4a75430042a4bbe969fb4df80, type: 3}
   audioClip4: {fileID: 8300000, guid: 8838c78ba8d7269468998065eb88ffcb, type: 3}
-  frequency: 5
+  frequencyTopRange: 600
 --- !u!82 &7647851956274365881
 AudioSource:
   m_ObjectHideFlags: 0
@@ -989,6 +989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 0}
+  damageMitigator: 0
 --- !u!1 &5661773013516886287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,6 +1340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 1346074891634586851, guid: b5b483fdc37ce0c42a65b3621df9aba1, type: 3}
+  damageMitigator: 0
 --- !u!1 &7949626864551433606
 GameObject:
   m_ObjectHideFlags: 0

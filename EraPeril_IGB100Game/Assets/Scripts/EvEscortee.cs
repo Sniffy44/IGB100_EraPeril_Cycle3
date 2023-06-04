@@ -46,6 +46,8 @@ public class EvEscortee : MonoBehaviour
 
     private bool isAlive = true;
 
+    public GameObject DialogueBox;
+
 
     // Start is called before the first frame update
     void Start()
@@ -111,6 +113,7 @@ public class EvEscortee : MonoBehaviour
        } else { // is dead
             transform.LookAt(new Vector3(0,100,0));
             escorteeNav.ResetPath();
+            //rb.transform += new Vector3(0, -2, 0);
        }            
     
         //escorteeNav.ResetPath();   
@@ -150,9 +153,7 @@ public class EvEscortee : MonoBehaviour
         audioC.PlayOneShot(deathSound, .7f);
         gameObject.GetComponentInChildren<EscorteeAttack>().canAttack = false;
         isAlive = false;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene(6);
+        DialogueBox.GetComponent<DialogueFinal>().Invoke("BeginFinalDialogue", 1.5f);
         
 
         //Destroy(gameObject);

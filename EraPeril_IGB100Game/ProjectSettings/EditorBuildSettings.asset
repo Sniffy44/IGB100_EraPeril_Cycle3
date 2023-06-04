@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/S5_Final.unity
     guid: fc20563d6dff31c4095dfdf240350c7c
   - enabled: 1
-    path: Assets/Scenes/S6_WinScreen.unity
+    path: Assets/Scenes/S6_LoseScreen.unity
+    guid: e7f8fcd2519a15347ad96569470a8779
+  - enabled: 1
+    path: Assets/Scenes/S7_WinScreen.unity
     guid: 83441026d96d49140b63ea7193dad890
   m_configObjects: {}

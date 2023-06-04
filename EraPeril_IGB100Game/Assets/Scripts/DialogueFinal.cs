@@ -32,7 +32,7 @@ public class DialogueFinal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q)){
+        if(Input.GetKeyDown(KeyCode.Q) && DialogueBoxUI.activeSelf == true){
             NextLine();
         } else {
             StopAllCoroutines();
@@ -59,6 +59,7 @@ public class DialogueFinal : MonoBehaviour
             StartCoroutine(TypeLine());
 
         }else{ // END GAME VICTORY
+            DialogueBoxUI.SetActive(false);
             endGameScript.Invoke("GameEndVictory", 2);
         }
     }

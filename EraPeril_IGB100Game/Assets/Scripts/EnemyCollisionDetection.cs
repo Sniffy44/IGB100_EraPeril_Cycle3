@@ -7,6 +7,7 @@ public class EnemyCollisionDetection : MonoBehaviour
     //public EnemyAttack wc;
     public GameObject hitParticle;
     private int damageAmount;
+    public int damageMitigator = 0;
 
 
     // Start is called before the first frame update
@@ -37,7 +38,7 @@ public class EnemyCollisionDetection : MonoBehaviour
 
             Instantiate(hitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
             other.gameObject.TryGetComponent(out PlayerHealth health);
-            health.DecreaseHealth(damageAmount);
+            health.DecreaseHealth(damageAmount - damageMitigator);
 
             GetComponentInParent<EnemyAttack>().isAttacking = false;
         }
